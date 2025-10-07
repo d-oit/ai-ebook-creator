@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Root TypeScript Configuration",
+  "compilerOptions": {
+    // Type Checking
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    
+    // Emit
+    "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // JavaScript Support
+    "allowJs": true,
+    "checkJs": false,
+    
+    // Interop Constraints
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    // Language and Environment
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "useDefineForClassFields": true,
+    
+    // Projects
+    "composite": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    
+    // Completeness
+    "skipLibCheck": true,
+    
+    // Path Mapping
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./apps/web/src/*"],
+      "@/components/*": ["./apps/web/src/components/*"],
+      "@/lib/*": ["./apps/web/src/lib/*"],
+      "@/hooks/*": ["./apps/web/src/hooks/*"],
+      "@/store/*": ["./apps/web/src/store/*"],
+      "@/types/*": ["./apps/web/src/types/*"],
+      "@core/*": ["./packages/core/src/*"],
+      "@ui/*": ["./packages/ui/src/*"],
+      "@utils/*": ["./packages/utils/src/*"],
+      "@config/*": ["./packages/config/src/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.json"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    ".next",
+    "coverage",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/e2e/**",
+    "**/__tests__/**",
+    "**/test-results/**",
+    "**/playwright-report/**"
+  ],
+  "references": [
+    {
+      "path": "./apps/web"
+    },
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/ui"
+    },
+    {
+      "path": "./packages/utils"
+    },
+    {
+      "path": "./packages/config"
+    }
+  ]
+}
