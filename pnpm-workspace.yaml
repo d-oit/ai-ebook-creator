@@ -1,0 +1,53 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+  - 'tools/*'
+
+# Shared dependencies hoisting
+shared-workspace-lockfile: true
+link-workspace-packages: true
+
+# Optimize node_modules structure
+node-linker: isolated
+store-dir: ~/.pnpm-store
+
+# Performance optimizations
+network-concurrency: 3
+child-concurrency: 5
+fetch-retries: 3
+fetch-retry-factor: 10
+fetch-retry-mintimeout: 10000
+fetch-retry-maxtimeout: 60000
+
+# Package resolution
+prefer-workspace-packages: true
+
+# Development optimizations
+auto-install-peers: true
+dedupe-peer-dependents: true
+
+# Security settings
+audit-level: moderate
+
+# Publishing settings
+publish-branch: main
+
+# Catalog for shared dependency versions
+catalog:
+  react: ^18.3.0
+  react-dom: ^18.3.0
+  typescript: ^5.4.5
+  next: ^15.0.0
+  tailwindcss: ^3.4.0
+  '@types/node': ^20.14.0
+  '@types/react': ^18.3.0
+  '@types/react-dom': ^18.3.0
+  vitest: ^1.6.0
+  '@testing-library/react': ^16.0.0
+  '@testing-library/jest-dom': ^6.4.0
+  '@playwright/test': ^1.45.0
+  zod: ^3.23.0
+  winston: ^3.13.0
+  '@ai-sdk/anthropic': ^1.0.0
+  '@ai-sdk/openai': ^1.0.0
+  pocketbase: ^0.22.0
